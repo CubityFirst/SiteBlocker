@@ -2,20 +2,21 @@
 # Written by michael.burr@REDACTED.com
 # No License, No Warranty, Good Luck.
 
+# Download & Prep URL List for Blocking
+$response = Invoke-WebRequest -Uri "https://raw.githubusercontent.com/CubityFirst/SiteBlocker/main/lists/notifications.txt"
+$content = $response.Content
+$URLs = $content -split '\r?\n'
+
+<# LEGACY - UNCOMMENT THIS IF YOU WANT TO HARD-SET SPECIFIC URLs
 $URLs = @(
   "example.com",
   "oraxtech.com"
 )
-
-<# 
-# Request to download list from Github
-$response = Invoke-WebRequest -Uri "https://raw.githubusercontent.com/CubityFirst/SiteBlocker/main/lists/notifications.txt"
-$content = $response.Content
-$URLs = $content -split '\r?\n'
 #>
 
 $Browsers = @("Microsoft\Edge","Google\Chrome")
 
+# Actual Notification Blocking
 foreach ($Browser in $Browsers) {
 
   $RegistryPath = "HKLM:\Software\Policies\$Browser\NotificationsBlockedForUrls"
