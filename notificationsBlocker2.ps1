@@ -1,13 +1,12 @@
-# This code is messy. It's not perfect.
-# Written by michael.burr@REDACTED.com
-# No License, No Warranty, Good Luck.
-
 $URLs = @(
   "example.com",
   "oraxtech.com"
 )
 
-$Browsers = @("Microsoft\Edge","Google\Chrome")
+$Browsers = @(
+  "Microsoft\Edge",
+  "Google\Chrome"
+)
 
 foreach ($Browser in $Browsers) {
 
