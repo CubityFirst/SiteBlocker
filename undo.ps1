@@ -1,4 +1,5 @@
 # Download & Prep URL List for Unblocking (This is a awful solution, looking to see if I can get a count of keys)
+# This will probably over-estimate the number of registry keys that it needs to remove.
 $response = Invoke-WebRequest -Uri "https://raw.githubusercontent.com/CubityFirst/SiteBlocker/main/lists/notifications.txt"
 $content = $response.Content
 $URLs = $content -split '\r?\n'
