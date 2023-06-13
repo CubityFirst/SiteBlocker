@@ -7,7 +7,7 @@ $response = Invoke-WebRequest -Uri "https://raw.githubusercontent.com/CubityFirs
 $content = $response.Content
 $URLs = $content -split '\r?\n'
 
-<# LEGACY - UNCOMMENT THIS IF YOU WANT TO HARD-SET SPECIFIC URLs
+<# LEGACY - UNCOMMENT THIS IF YOU WANT TO HARD CODE SPECIFIC URLs
 $URLs = @(
   "example.com",
   "oraxtech.com"
