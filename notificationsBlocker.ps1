@@ -7,6 +7,13 @@ $URLs = @(
   "oraxtech.com"
 )
 
+<# 
+# Request to download list from Github
+$response = Invoke-WebRequest -Uri "https://raw.githubusercontent.com/CubityFirst/SiteBlocker/main/lists/notifications.txt"
+$content = $response.Content
+$URLs = $content -split '\r?\n'
+#>
+
 $Browsers = @("Microsoft\Edge","Google\Chrome")
 
 foreach ($Browser in $Browsers) {
